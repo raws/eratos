@@ -1,8 +1,10 @@
+require "eratos/helpers"
 require "rubygems"
 require "trollop"
 
 module Eratos
   class << self
+    include Helpers
     attr_accessor :blocks, :config, :options
     
     def boot!
@@ -12,14 +14,21 @@ module Eratos
     end
     
     def start!
-      
+      maps.each do |name, options|
+        Cartographer.new(name, options).render!
+      end
+    end
+    
+    def maps
+      config["maps"]
     end
     
     protected
       def load_options
         self.options = Trollop.options do
-          opt :config, "Path to Eratos config file", :type => :string, :required => true
-          opt :map,    "Render specific map(s)", :type => :strings
+          opt :config,  "Path to Eratos config file", :type => :string, :required => true
+          opt :verbose, "Print debug information", :type => :boolean
+          opt :map,     "Render specific map(s)", :type => :strings
         end
       end
       
@@ -27,9 +36,9 @@ module Eratos
         config_path = File.expand_path(options[:config])
         self.config = YAML.load_file(config_path)
       rescue Errno::ENOENT
-        Trollop.die "couldn't find Eratos config file at #{config_path}"
+        die "couldn't find Eratos config file at #{config_path}"
       rescue ArgumentError => e
-        Trollop.die "couldn't parse Eratos config file: #{e.message}"
+        die "couldn't parse Eratos config file: #{e.message}"
       end
       
       def load_blocks
@@ -38,3 +47,6 @@ module Eratos
       end
   end
 end
+
+Eratos.boot!
+require "eratos"

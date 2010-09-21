@@ -1,73 +1,70 @@
 ---
-blocks:
-  air: 0
-  stone: 0
-  grass: 2
-  dirt: 3
-  cobblestone: 4
-  wood: 5
-  sapling: 6
-  bedrock: 7
-  water:
-    - 8
-    - 9
-  lava:
-    - 10
-    - 11
-  sand: 12
-  gravel: 13
-  gold_ore: 14
-  iron_ore: 15
-  coal_ore: 16
-  log: 17
-  leaves: 18
-  sponge: 19
-  glass: 20
-  yellow_flower: 37
-  red_rose: 38
-  brown_mushroom: 39
-  red_mushroom: 40
-  gold_block: 41
-  iron_block: 42
-  double_step: 43
-  step: 44
-  brick: 45
-  tnt: 46
-  bookcase: 47
-  mossy_cobblestone: 48
-  obsidian: 49
-  torch: 50
-  fire: 51
-  mob_spawner: 52
-  wooden_stairs: 53
-  chest: 54
-  diamond_ore: 56
-  diamond_block: 57
-  workbench: 58
-  crops: 59
-  soil: 60
-  furnace: 61
-  burning_furnace: 62
-  sign_post: 63
-  wooden_door: 64
-  ladder: 65
-  minecart_tracks: 66
-  cobblestone_stairs: 67
-  wall_sign: 68
-  lever: 69
-  stone_pressure_plate: 70
-  iron_door: 71
-  wooden_pressure_plate: 72
-  redstone_ore: 73
-  glowing_redstone_ore: 74
-  redstone_torch_off: 75
-  redstone_torch_on: 76
-  stone_button: 77
-  snow: 78
-  ice: 79
-  snow_block: 80
-  cactus: 81
-  clay: 82
-  reed: 83
-  jukebox: 84
-  fence: 85
+air: 0
+stone: 0
+grass: 2
+dirt: 3
+cobblestone: 4
+wood: 5
+sapling: 6
+bedrock: 7
+water: 8
+stationary_water: 9
+lava: 10
+stationary_lava: 11
+sand: 12
+gravel: 13
+gold_ore: 14
+iron_ore: 15
+coal_ore: 16
+log: 17
+leaves: 18
+sponge: 19
+glass: 20
+yellow_flower: 37
+red_rose: 38
+brown_mushroom: 39
+red_mushroom: 40
+gold_block: 41
+iron_block: 42
+double_step: 43
+step: 44
+brick: 45
+tnt: 46
+bookcase: 47
+mossy_cobblestone: 48
+obsidian: 49
+torch: 50
+fire: 51
+mob_spawner: 52
+wooden_stairs: 53
+chest: 54
+diamond_ore: 56
+diamond_block: 57
+workbench: 58
+crops: 59
+soil: 60
+furnace: 61
+burning_furnace: 62
+sign_post: 63
+wooden_door: 64
+ladder: 65
+minecart_tracks: 66
+cobblestone_stairs: 67
+wall_sign: 68
+lever: 69
+stone_pressure_plate: 70
+iron_door: 71
+wooden_pressure_plate: 72
+redstone_ore: 73
+glowing_redstone_ore: 74
+redstone_torch_off: 75
+redstone_torch_on: 76
+stone_button: 77
+snow: 78
+ice: 79
+snow_block: 80
+cactus: 81
+clay: 82
+reed: 83
+jukebox: 84
+fence: 85
