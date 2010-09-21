@@ -1,7 +1,8 @@
-eratos is a simple tool which makes working with "c10t":http://github.com/udoprog/c10t easier. Generate maps using a human-readable YAML configuration instead of juggling shell scripts and "Minecraft":http://minecraft.net/ block IDs!
+eratos is a simple helper which makes working with "c10t":http://github.com/udoprog/c10t easier. Generate maps using a human-readable YAML configuration instead of juggling shell scripts and "Minecraft":http://minecraft.net/ block IDs!
 
 h2. Requirements
 
+* "c10t":http://github.com/udoprog/c10t
 * Ruby 1.8.7
 
 h2. Usage
