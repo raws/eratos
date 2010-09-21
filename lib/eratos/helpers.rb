@@ -8,6 +8,10 @@ module Eratos
       warn(*args) if Eratos.options[:verbose]
     end
     
+    def tab(num=1)
+      ("  " * num)[0..-2]
+    end
+    
     def die(msg)
       warn("Error: #{msg}.")
       exit 1
