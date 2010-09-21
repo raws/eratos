@@ -6,6 +6,7 @@ h3. Requirements
 
 * "c10t":http://github.com/udoprog/c10t
 * Ruby 1.8.7
+* "trollop":http://trollop.rubyforge.org/ Ruby gem (@gem install trollop@)
 
 h3. Usage
 
