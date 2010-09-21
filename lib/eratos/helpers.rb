@@ -1,7 +1,7 @@
 module Eratos
   module Helpers
     def warn(*args)
-      $stderr.puts(args * " ")
+      $stderr.puts(args * " ") unless Eratos.options[:silent]
     end
     
     def debug(*args)

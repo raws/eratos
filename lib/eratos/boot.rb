@@ -27,8 +27,9 @@ module Eratos
       def load_options
         self.options = Trollop.options do
           opt :config,  "Path to Eratos config file", :type => :string, :required => true
-          opt :verbose, "Print debug information", :type => :boolean
           opt :map,     "Render specific map(s)", :type => :strings
+          opt :silent,  "Don't print anything", :type => :boolean
+          opt :verbose, "Print debug information", :type => :boolean
         end
       end
       
