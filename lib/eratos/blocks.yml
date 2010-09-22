@@ -1,6 +1,6 @@
 ---
 air: 0
-stone: 0
+stone: 1
 grass: 2
 dirt: 3
 cobblestone: 4
