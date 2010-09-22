@@ -20,7 +20,7 @@ module Eratos
     end
     
     def render!
-      warn name
+      warn %{Generating map "#{name}"...}
       
       options["binary"] = true
       debug tab, command

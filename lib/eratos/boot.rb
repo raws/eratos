@@ -20,7 +20,18 @@ module Eratos
     end
     
     def maps
-      config["maps"]
+      if options[:map].is_a?(Array) && !options[:map].empty?
+        options[:map].inject({}) do |maps, name|
+          if config["maps"][name]
+            maps[name] = config["maps"][name]
+          else
+            warn %{Skipping "#{name}" because it is not a map configuration!}
+          end
+          maps
+        end
+      else
+        config["maps"]
+      end
     end
     
     protected
