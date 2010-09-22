@@ -10,7 +10,52 @@ h3. Requirements
 
 h3. Usage
 
-Eratos is currently being fleshed out. Usage notes will appear soon!
+Imagine if you could configure c10t with a YAML file like the following:
+
+bc. ---
+settings:
+  c10t: ~/bin/c10t
+worlds:
+  snow:
+    world: &snow_world ~/Library/Application Support/minecraft/saves/World5
+    folder: &snow_folder ~/Sites/minecraft/maps/snow
+maps:
+  islands_overview_night:
+    world: ~/Library/Application Support/minecraft/saves/World2
+    output: ~/Sites/minecraft/maps/islands/overview.png
+    night: true
+  snow_isometric_structures:
+    world: *snow_world
+    output:
+      folder: *snow_output
+      file: structures.png
+    exclude: all
+    include:
+      - cobblestone
+      - mossy_cobblestone
+      - wood
+      - brick
+    isometric: true
+
+Now imagine no more, because that is precisely what Eratos is good for!
+
+All you'll need is a YAML file with a hash named @maps@ in it. Each @maps@ entry corresponds to an image you'd like to generate using c10t. At the very least, you'll want @world@ and @output@ keys for each map:
+
+bc. ---
+maps:
+  overview:
+    world: ~/Library/Application Support/minecraft/saves/World1
+    output: ~/Desktop/overview.png
+
+You may also need to tell Eratos where your c10t binary is, if it's not in your @$PATH@:
+
+bc. ---
+settings:
+  c10t: ~/bin/c10t
+
+Then, to generate your maps, run @bin/eratos@, specifying the path to your config file with the @--config@ or @-c@ switches:
+
+bc. eratos -c config.yml
 
 h3. License <small>(MIT)</small>
 
