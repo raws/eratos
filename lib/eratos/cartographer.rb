@@ -27,24 +27,31 @@ module Eratos
       
       open("| #{command}") do |io|
         warn tab, "Preparing..."
-        state = 0
+        state, complete = 0, 0
         until io.eof?
-          if (status = io.read(2)[0]) != state
+          status = io.getc
+          if status != state
             state = status
             case state
             when STATUS_RENDERING
-              warn tab, "Rendering..."
+              status tab, "Rendering... "
             when STATUS_COMPOSITING
-              warn tab, "Compositing..."
+              status "\n  Compositing... "
             when STATUS_SAVING
-              warn tab, "Saving..."
+              status "\n  Saving... "
             when STATUS_ERROR
-              warn tab, "Error: #{io.read}"
+              warn "\n Error: #{io.read}"
               return
             end
           end
+          
+          progress = ((io.getc.to_i * 100) / 0xff) + 1
+          if progress > complete
+            complete = progress
+            status "#{progress}% " if progress % 25 == 0
+          end
         end
-        warn tab, "Done!"
+        warn "\n  Done!"
       end
     end
     
